@@ -1,0 +1,65 @@
+/* Eliminamos la importación de Google Fonts que causaba el error */
+/* @import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Poppins:wght@300;400;500;600;700&display=swap"); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #FF5722;
+  --primary-dark: #E64A19;
+  --secondary: #4CAF50;
+  --accent: #FFC107;
+  --background: #FFFFFF;
+  --text: #333333;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+body {
+  font-family: var(--font-poppins);
+  color: var(--text);
+  background-color: var(--background);
+}
+
+.title-font {
+  font-weight: 700;
+  /* Usamos una fuente alternativa ya que Bubblegum Sans no está disponible */
+  font-family: var(--font-poppins);
+}
+
+.cta-button {
+  background-color: var(--primary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button {
+  background-color: var(--accent);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon {
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1) translateY(-5px);
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 py-12;
+  }
+}
